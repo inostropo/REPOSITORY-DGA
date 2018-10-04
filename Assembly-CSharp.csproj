@@ -61,6 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\GravityAction.cs" />
     <Compile Include="Assets\Scripts\Damager.cs" />
     <Compile Include="Assets\Scripts\Gameover.cs" />
     <Compile Include="Assets\Scripts\HP.cs" />
