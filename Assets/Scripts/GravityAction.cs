@@ -13,6 +13,7 @@ public class GravityAction : MonoBehaviour {
     public bool PlayerInRange;
     [Tooltip("If dinamic ,the platform stop the simulation of gravity if the player is´nt in range")]
     public bool DinamicPlatform;
+    public float GravityInRange = 1f;
 	// Use this for initialization
 	void Start () {
 		
@@ -23,7 +24,7 @@ public class GravityAction : MonoBehaviour {
         if (other.gameObject.CompareTag(Player))
         {
             PlayerInRange = true;
-            Platform.gravityScale = 1;
+            Platform.gravityScale = GravityInRange;
         }
     }
     void OnTriggerExit2D(Collider2D other)
