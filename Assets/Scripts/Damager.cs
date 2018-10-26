@@ -12,7 +12,7 @@ public class Damager : MonoBehaviour {
     public float Damage = 2f;
     public string Player = "Player";
     public bool PlayerInRange;
-
+    public bool PlayerIsDead;
 	// Use this for initialization
 	void Start () {
 
@@ -24,7 +24,7 @@ public class Damager : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other)
     {
 		
-        if (other.gameObject.CompareTag(Player))
+        if (other.gameObject.CompareTag(Player)&&!PlayerIsDead)
         {
             PlayerInRange = true;
             other.gameObject.SendMessage("TakeDamage", Damage);
@@ -39,5 +39,9 @@ public class Damager : MonoBehaviour {
             PlayerInRange = true;
             
         }
+    }
+    public void PlayerDead()
+    {
+        PlayerIsDead = true;
     }
 }

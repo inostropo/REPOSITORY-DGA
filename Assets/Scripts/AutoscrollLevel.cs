@@ -9,8 +9,8 @@ public class AutoscrollLevel : MonoBehaviour {
     public bool Move;
 	// Use this for initialization
 	void Start () {
-		
-	}
+        Move = true;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -22,4 +22,12 @@ public class AutoscrollLevel : MonoBehaviour {
        
       
 	}
+    public void StopLava()
+    {
+        Move = false;
+    }
+    public void StartLava()
+    {
+        Move = false;
+    }
 }

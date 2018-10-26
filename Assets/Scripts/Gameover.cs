@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 //Script by Claudio Inostroza
 
 public class Gameover : MonoBehaviour {
@@ -10,12 +11,15 @@ public class Gameover : MonoBehaviour {
     public CanvasGroup HudIngame;
     public AudioSource GameOverSfx;
     public bool ItGameover;
+    public GameObject LavaObj;
+
  
 
 	// Use this for initialization
 	void Start ()
     {
         ItGameover = false;
+        UiGameover.interactable = false;
     }
 	
 	// Update is called once per frame
@@ -24,15 +28,16 @@ public class Gameover : MonoBehaviour {
 		if (ItGameover)
         {
             HudIngame.interactable = false;
-            UiGameover.interactable = true;
+           
             HudIngame.alpha -= 0.1f;
             UiGameover.alpha += 0.1f;
+            Invoke("ButtonEnable", 4f);
         }
         else
         {
             HudIngame.interactable = true;
             HudIngame.alpha += 0.1f;
-            UiGameover.interactable = true;
+            
             UiGameover.alpha -= 0.1f;
         }
 
@@ -44,6 +49,10 @@ public class Gameover : MonoBehaviour {
     {
         GameOverSfx.Play();
         ItGameover = true;
+        LavaObj.SendMessage("StopLava");
     }
-
+    void ButtonEnable()
+    {
+        UiGameover.interactable = true;
+    }
 }

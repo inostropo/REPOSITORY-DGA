@@ -19,7 +19,7 @@ public class GameobjectDestructor : MonoBehaviour {
       
         if (other.gameObject.CompareTag(DestroyObj))
         {
-           
+      
             Destroy(other.gameObject);
         }
     }

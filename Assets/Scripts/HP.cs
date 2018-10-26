@@ -19,6 +19,7 @@ public class HP : MonoBehaviour {
     public float AnimationTime = 5f;
     public Animator Player;
     public GameObject PlayerObj;
+    public GameObject InstaKiler;
     public AudioSource DamageSFX;
     public AudioSource DeadSFX;
     public GameObject Gameover;
@@ -123,6 +124,7 @@ public class HP : MonoBehaviour {
             DeadSFX.Play();
             Player.SetTrigger("Dead");
             Gameover.SendMessage("IsDead");
+            InstaKiler.SendMessage("PlayerDead");
         }
         
     }
