@@ -5,8 +5,9 @@ using UnityEngine;
 public class AutoscrollLevel : MonoBehaviour {
 
     public GameObject LevelToScroll;
-    public Vector3 AxisToscroll;
+    public Vector3 AxisToScroll;
     public bool Move;
+    
 	// Use this for initialization
 	void Start () {
         Move = true;
@@ -17,7 +18,7 @@ public class AutoscrollLevel : MonoBehaviour {
 
         if (Move)
         {
-            LevelToScroll.transform.Translate(AxisToscroll * Time.deltaTime);
+            LevelToScroll.transform.Translate(AxisToScroll * Time.deltaTime);
         }
        
       

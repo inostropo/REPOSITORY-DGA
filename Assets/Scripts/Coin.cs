@@ -12,6 +12,7 @@ public class Coin : MonoBehaviour {
     public AudioSource Sfx;
 
     public float Count = 1f;
+    public float Score = 1f;
     public string Player = "Player";
     public ParticleSystem PkUpfx;
 
@@ -36,7 +37,8 @@ public class Coin : MonoBehaviour {
             PickUpcollider.enabled = false;
             RestorerPick.GetComponent<SpriteRenderer>().enabled = false;
             GameController.SendMessage("CoinCout", Count);
-           
+            GameController.SendMessage("ScoreCount", Score);
+
             Destroy(this.gameObject, Timedestroy);
         }
 

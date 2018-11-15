@@ -66,8 +66,8 @@ public class Score : MonoBehaviour {
     {
         CoinsFloat += Count;
     }
-    void MeterCount(float Meters)
+    void ScoreCount(float Score)
     {
-        ScoreFloat += Meters;
+        ScoreFloat += Score;
     }
 }
